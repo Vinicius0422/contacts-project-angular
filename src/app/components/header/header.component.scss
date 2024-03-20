@@ -1,0 +1,84 @@
+@import "../../variables/variables-color.scss";
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(207, 207, 207, 0.281);
+
+    a {
+        color: $primary-text-color;
+    }
+}
+
+.logo {
+
+    a {
+        font-size: 1.2rem;
+        font-weight: 700;
+    }
+
+    span {
+        color: $secondary-text-color;
+    }
+}
+
+.links {
+    display: none;
+}
+
+@media (min-width: 400px) {
+    .logo {
+
+        a {
+            font-size: 1.4rem;
+        }
+
+    }
+
+    .links {
+        display: flex;
+        gap: 1.5rem;
+        font-size: 1rem;
+        font-weight: 500;
+
+        a {
+            transition: all 0.5s;
+        }
+
+        a:hover {
+            color: $secondary-text-color;
+        }
+
+    }
+}
+
+@media (min-width: 768px) {
+    .logo {
+
+        a {
+            font-size: 1.6rem;
+        }
+
+    }
+
+    .links {
+        gap: 2rem;
+        font-size: 1.1rem;
+    }
+}
+
+
+@media (min-width: 1068px) {
+    .logo {
+        a {
+            font-size: 1.8rem;
+        }
+    }
+
+    .links {
+        gap: 3rem;
+        font-size: 1.2rem;
+    }
+}
