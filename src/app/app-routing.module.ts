@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ContactListComponent } from './contacts/contact-list/contact-list.component';
+import { HomeComponent } from './components/home/home.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 const routes: Routes = [
 
-    {path: '', component: ContactListComponent}
+    {path: '', redirectTo: 'home', pathMatch: 'full'},
+    {path: 'home', component: HomeComponent},
+    {path: 'contacts', loadChildren: () => import('./components/contacts/contacts.module').then(m => m.ContactsModule)},
+    {path: 'profile', component: ProfileComponent}
 ];
 
 @NgModule({
