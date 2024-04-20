@@ -1,5 +1,6 @@
 @import "../../variables/variables-color.scss";
 
+
 .header {
     margin: 0 auto;
     border-bottom: 1px solid rgba(207, 207, 207, 0.281);
@@ -7,6 +8,11 @@
     a {
         color: $primary-text-color;
     }
+
+    .route-activated {
+      color: $secondary-text-color;
+    }
+
 }
 
 .logo {
@@ -37,15 +43,15 @@
     .logo {
 
         a {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
         }
 
     }
 
     .links {
         display: flex;
-        gap: 1.5rem;
-        font-size: 1rem;
+        gap: 1.2rem;
+        font-size: 0.9rem;
         font-weight: 500;
 
         a {
