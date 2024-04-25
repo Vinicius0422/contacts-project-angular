@@ -1,1 +1,61 @@
-<p>contact-list works!</p>
+<section class="contacts-container">
+  <div class="contacts-actions">
+    <div class="contacts-input">
+      <input
+        type="text"
+        placeholder="Enter first name, last name, profession or company..."
+        [(ngModel)]="parameter"
+        (keydown.enter)="onSearch()"
+      />
+      <i class="bi bi-search" (click)="onSearch()"></i>
+    </div>
+    <button routerLink="/contacts/new">
+      <i class="bi bi-plus-lg"></i>
+      New
+    </button>
+  </div>
+  <div *ngIf="(contactsResult | async) === null">Carregando...</div>
+  <div *ngIf="contactsResult | async as pageable">
+    <div class="contacts-area">
+      <div class="contact-box" *ngFor="let contact of pageable.content" [routerLink]="'/contacts/details/' + contact.id">
+        <img src="../../../../assets/avatar.png" />
+        <div class="infos">
+          <h4>{{ contact.firstName + " " + contact.lastName }}</h4>
+          <p>City: {{ contact.city }}</p>
+          <p>{{ contact.country }}</p>
+          <p>{{ contact.company }}</p>
+          <p>{{ contact.occupation }}</p>
+          <p>{{ contact.email }}</p>
+          <p>{{ contact.phone }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="none-contact" *ngIf="pageable.empty">
+      <span>Nenhum contato encontrado</span>
+    </div>
+
+    <div class="pagination">
+      <div class="contactsPerPage">
+        <label for="contactsPerPage">Contacts per page</label>
+        <select
+          name="contactsPerPage"
+          [(ngModel)]="contactsPerPage"
+          (change)="onContactsPerPageChange()"
+        >
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="20">20</option>
+        </select>
+      </div>
+      <ul class="page-numbers">
+        <li
+          *ngFor="let pageNumber of getPageNumbers(pageable.totalPages)"
+          (click)="onCurrentPageChange(pageNumber - 1)"
+          [class.active]="pageNumber === pageable.number + 1"
+        >
+          {{ pageNumber }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
