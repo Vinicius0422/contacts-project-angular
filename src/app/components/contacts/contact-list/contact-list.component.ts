@@ -30,29 +30,21 @@ export class ContactListComponent implements OnInit {
   }
 
   onSearch() {
-    console.log("valor digitado:", this.parameter)
-    console.log("valor digitado:", this.lastParameter)
-
     if(this.parameter !== this.lastParameter){
       this.lastParameter = this.parameter
       this.contactsResult = this.contactsSerive.getContactsByParameter(this.parameter)
     }
-    this.contactsSerive.getContactsByParameter(this.parameter).subscribe(data => console.log(data))
   }
 
   onContactsPerPageChange() {
-    console.log(this.contactsPerPage)
     this.currentPage = 0;
     this.loadContacts();
   }
 
   onCurrentPageChange(pageNumber: number) {
-    console.log("page selected: " + pageNumber)
-    console.log("current page:" + this.currentPage)
     if(pageNumber !== this.currentPage) {
-      console.log("teste")
       this.currentPage = pageNumber
-      this.loadContacts();
+      this.loadContacts()
     }
   }
 
