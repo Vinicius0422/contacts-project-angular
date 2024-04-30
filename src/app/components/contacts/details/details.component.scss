@@ -1,0 +1,55 @@
+@import "../../../variables/variables-color.scss";
+
+.content-area {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 10px;
+}
+
+.input-area {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-area input{
+  padding: 0.5rem;
+  outline: none;
+  cursor: not-allowed;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: $bg-box-color;
+}
+
+.button-area {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+.button-area a {
+  padding: 0.8rem 1.6rem;
+  border-radius: 0.5rem;
+  background-color: $secondary-text-color;
+  color: #fff;
+}
+
+/* Adicione media queries para estilos específicos para dispositivos móveis */
+@media screen and (max-width: 400px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .button-area {
+    justify-content: center;
+  }
+
+  .button-area a {
+    font-size: 0.8rem;
+  }
+}

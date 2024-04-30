@@ -1,1 +1,143 @@
-<p>details works!</p>
+<!-- <div>
+  <div *ngIf="contact$ | async as contact">
+    <div class="input-area">
+      <label for="firstName">FirstName</label>
+      <input type="text" name="firstName" value="{{ contact.firstName }}" />
+    </div>
+    <div class="input-area"></div>
+    <label for="lastName">LastName</label>
+    <input type="text" name="lastName" value="{{ contact.lastName }}" />
+    <div class="input-area"></div>
+    <label for="age">Age</label>
+    <input type="text" name="age" value="{{ contact.age }}" />
+    <div class="input-area"></div>
+    <label for="birthDate">Birth Date</label>
+    <input type="text" name="birthDate" value="{{ contact.birthDate }}" />
+    <div class="input-area"></div>
+    <label for="occupation">Occupation</label>
+    <input type="text" name="occupation" value="{{ contact.occupation }}" />
+    <label for="company">Company</label>
+    <input type="text" name="company" value="{{ contact.company }}" />
+    <label for="street">Street</label>
+    <input type="text" name="street" value="{{ contact.street }}" />
+    <label for="city">City</label>
+    <input type="text" name="city" value="{{ contact.city }}" />
+    <label for="neighborhood">Neighborhood</label>
+    <input type="text" name="neighborhood" value="{{ contact.neighborhood }}" />
+    <label for="country">Country</label>
+    <input type="text" name="country" value="{{ contact.country }}" />
+    <label for="zipCode">zipCode</label>
+    <input type="text" name="zipCode" value="{{ contact.zipCode }}" />
+    <label for="phone">Phone</label>
+    <input type="text" name="phone" value="{{ contact.phone }}" />
+    <label for="email">Email</label>
+    <input type="text" name="email" value="{{ contact.email }}" />
+  </div>
+</div> -->
+
+<div class="content-area">
+  <div *ngIf="contact$ | async as contact">
+    <form class="grid-container">
+      <div class="input-area">
+        <label for="firstName">First Name</label>
+        <input
+          type="text"
+          name="firstName"
+          value="{{ contact.firstName }}"
+          readonly
+        />
+      </div>
+      <div class="input-area">
+        <label for="lastName">Last Name</label>
+        <input
+          type="text"
+          name="lastName"
+          value="{{ contact.lastName }}"
+          readonly
+        />
+      </div>
+      <div class="input-area">
+        <label for="age">Age</label>
+        <input type="text" name="age" value="{{ contact.age }}" readonly />
+      </div>
+      <div class="input-area">
+        <label for="birthDate">Birth Date</label>
+        <input
+          type="text"
+          name="birthDate"
+          value="{{ contact.birthDate }}"
+          readonly
+        />
+      </div>
+      <div class="input-area">
+        <label for="occupation">Occupation</label>
+        <input
+          type="text"
+          name="occupation"
+          value="{{ contact.occupation }}"
+          readonly
+        />
+      </div>
+      <div class="input-area">
+        <label for="company">Company</label>
+        <input
+          type="text"
+          name="company"
+          value="{{ contact.company }}"
+          readonly
+        />
+      </div>
+      <div class="input-area">
+        <label for="street">Street</label>
+        <input
+          type="text"
+          name="street"
+          value="{{ contact.street }}"
+          readonly
+        />
+      </div>
+      <div class="input-area">
+        <label for="city">City</label>
+        <input type="text" name="city" value="{{ contact.city }}" readonly />
+      </div>
+      <div class="input-area">
+        <label for="neighborhood">Neighborhood</label>
+        <input
+          type="text"
+          name="neighborhood"
+          value="{{ contact.neighborhood }}"
+          readonly
+        />
+      </div>
+      <div class="input-area">
+        <label for="country">Country</label>
+        <input
+          type="text"
+          name="country"
+          value="{{ contact.country }}"
+          readonly
+        />
+      </div>
+      <div class="input-area">
+        <label for="zipCode">Zip Code</label>
+        <input
+          type="text"
+          name="zipCode"
+          value="{{ contact.zipCode }}"
+          readonly
+        />
+      </div>
+      <div class="input-area">
+        <label for="phone">Phone</label>
+        <input type="text" name="phone" value="{{ contact.phone }}" readonly />
+      </div>
+      <div class="input-area">
+        <label for="email">Email</label>
+        <input type="text" name="email" value="{{ contact.email }}" readonly />
+      </div>
+    </form>
+    <div class="button-area">
+      <a [routerLink]="'/contacts/update/' + contact.id">Edit</a>
+    </div>
+  </div>
+</div>
